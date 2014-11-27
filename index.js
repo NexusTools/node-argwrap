@@ -8,7 +8,7 @@ function argnames(func) {
 	var fnStr = func.toString().replace(STRIP_COMMENTS, '')
 	var result = fnStr.slice(fnStr.indexOf('(')+1, fnStr.indexOf(')')).match(ARGUMENT_NAMES)
 	if(result === null)
-		throw new Error("Failed to parse arguments from function source...");
+		return [];
 	return result
 }
 
@@ -61,7 +61,12 @@ function argWrap0(func, required, friendlyname) {
         source += "}";
     source += "})";
     
-    var mapper = eval(source);
+    var mapper;
+    try {
+    	mapper = eval(source);
+	} catch(e) {
+		throw new Error("Failed to compile source: " + source);
+	}
     return [function(arguments) {
         return func.apply(func, mapper(arguments));
     }, names];

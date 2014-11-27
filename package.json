@@ -2,7 +2,7 @@
 	"name": "argwrap",
 	"author": "NexusTools",
 	"homepage": "https://www.nexustools.net/projects#argwrap",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"licenses": [
 		{
 			"type": "Apache License 2.0",
