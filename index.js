@@ -62,7 +62,7 @@ function argWrap0(func, required, friendlyname) {
         throw new Error("Failed to compile source: " + source);
     }
     return [function (args) {
-            return func.apply(func, mapper(args));
+            return func.apply(this, mapper(args));
         }, names];
 }
 function argWrap(func, required, friendlyname) {

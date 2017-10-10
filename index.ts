@@ -69,7 +69,7 @@ function argWrap0(func: Function, required?: string[], friendlyname?: string) {
         throw new Error("Failed to compile source: " + source);
     }
     return [function (args: any) {
-        return func.apply(func, mapper(args));
+        return func.apply(this, mapper(args));
     }, names];
 }
 
@@ -78,9 +78,9 @@ function argWrap(func: Function, required?: string[], friendlyname?: string) {
 }
 
 export = argWrap as any as {
-    (func: Function, required?: string[], friendlyname?: string): Function,
-    wrap0: (func: Function, required?: string[], friendlyname?: string) => {[0]:Function,[1]:string[]},
-    names: (func: Function) => string[]
+    (func: Function, required?: string[], friendlyname?: string): (args: any) => any,
+    wrap0(func: Function, required?: string[], friendlyname?: string): {[0]:(args: any) => any,[1]:string[]},
+    names(func: Function): string[]
 };
 (argWrap as any).wrap0 = argWrap0;
 (argWrap as any).names = argnames;

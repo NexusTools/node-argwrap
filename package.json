@@ -7,8 +7,8 @@
             "email": "ktaeyln@gmail.com"
         }
     ],
-    "homepage": "https://www.nexustools.net/projects#argwrap",
-    "version": "0.0.3",
+    "homepage": "https://www.nexustools.net/nodejs/argwrap",
+    "version": "0.0.4",
     "license": "Apache-2.0",
     "description": "Scans a given argument and detects its arguments, than maps those onto an object through a wrapper function which can be called whenever. Makes it easy to provide plugins that have a dynamic order or set of arguments with multiple names.",
     "keywords": [
