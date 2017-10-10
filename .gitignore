@@ -5,3 +5,5 @@
 npm-debug.log
 *.bak
 *~
+/nbproject/private/
+package-lock.json
