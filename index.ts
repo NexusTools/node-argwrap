@@ -77,6 +77,10 @@ function argWrap(func: Function, required?: string[], friendlyname?: string) {
     return argWrap0(func, required, friendlyname)[0];
 }
 
-export = argWrap;
+export = argWrap as any as {
+    (func: Function, required?: string[], friendlyname?: string): Function,
+    wrap0: (func: Function, required?: string[], friendlyname?: string) => {[0]:Function,[1]:string[]},
+    names: (func: Function) => string[]
+};
 (argWrap as any).wrap0 = argWrap0;
 (argWrap as any).names = argnames;

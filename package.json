@@ -9,12 +9,7 @@
     ],
     "homepage": "https://www.nexustools.net/projects#argwrap",
     "version": "0.0.3",
-    "licenses": [
-        {
-            "type": "Apache License 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-        }
-    ],
+    "license": "Apache-2.0",
     "description": "Scans a given argument and detects its arguments, than maps those onto an object through a wrapper function which can be called whenever. Makes it easy to provide plugins that have a dynamic order or set of arguments with multiple names.",
     "keywords": [
         "names",
